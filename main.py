@@ -1,8 +1,14 @@
 from tkinter import *
+from tkinter import filedialog
 from tkinter import ttk
 
+current_dir = './'
+
+# フォルダを指定して開く (デフォルトはカレント)
 def open_dir():
     print('フォルダを開きます...')
+    open_dir = filedialog.askdirectory(initialdir=current_dir)
+    return open_dir  # 開いたフォルダのパスを返す
 
 
 if __name__ == '__main__':
@@ -22,6 +28,9 @@ if __name__ == '__main__':
     files_label = ttk.Scrollbar
 
     info_label = ttk.Label(main_frame, text='情報:\nフォルダが選択されていません')
+
+
+
     
 
     # ウィジェットの色
